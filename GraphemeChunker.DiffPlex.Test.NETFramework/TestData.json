@@ -1,0 +1,49 @@
+﻿{
+  "GraphemeChunkerTest": {
+    "Test1": {
+      "Title": "ASCII",
+      "Pattern": "This  is  ASCII",
+      "ExpectedLength": 15
+    },
+    "Test2": {
+      "Title": "Surrogate Pairs",
+      "Pattern": "\uD842\uDF9F\uD842\uDFB7\uD840\uDC0B",
+      "ExpectedLength": 3
+    },
+    "Test3": {
+      "Title": "Diacritical Marks",
+      "Pattern": "a\u0300\u0301\u0320\u0321b\u0302\u0303\u0322\u0323c\u0303\u0304\u0323\u0324d\u0305\u0306\u0325\u0326",
+      "ExpectedLength": 4
+    },
+    "Test4": {
+      "Title": "Japanese Kanji Variation Selector",
+      "Pattern": "\u845B\u845B\uDB40\uDD00\u845B\uDB40\uDD01",
+      "ExpectedLength": 3
+    },
+    "Test5": {
+      "Title": "Korean Hangul Jamo Ligature",
+      "Pattern": "\u110B\u1161\u11AB\u1102\u1167\u11BC\u1112\u1161\u1109\u1166\u110B\u116D",
+      "ExpectedLength": 5
+    },
+    "Test6": {
+      "Title": "Family Emoji",
+      "Pattern": "\uD83D\uDC68\u200D\uD83D\uDC68\u200D\uD83D\uDC67\u200D\uD83D\uDC66\uD83D\uDC69\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\uD83D\uDC68\u200D\uD83D\uDC68\u200D\uD83D\uDC67\u200D\uD83D\uDC66",
+      "ExpectedLength": 3
+    },
+    "Test7": {
+      "Title": "Emoji Skin Tone",
+      "Pattern": "\uD83D\uDC69\uD83C\uDFFB\uD83D\uDC71\uD83C\uDFFC\uD83D\uDC67\uD83C\uDFFD\uD83D\uDC66\uD83C\uDFFE",
+      "ExpectedLength": 4
+    },
+    "Test8": {
+      "Title": "Regional Indicator",
+      "Pattern": "\uD83C\uDDEF\uD83C\uDDF5\uD83C\uDDFA\uD83C\uDDF8",
+      "ExpectedLength": 2
+    },
+    "Test9": {
+      "Title": "Tag Sequence",
+      "Pattern": "\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73\uDB40\uDC7F\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74\uDB40\uDC7F",
+      "ExpectedLength": 3
+    }
+  }
+}

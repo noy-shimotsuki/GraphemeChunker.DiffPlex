@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;net35;net5.0;net6.0;net7.0</TargetFrameworks>
+    <RootNamespace>TsukuyoOka.DiffPlex.Chunkers</RootNamespace>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Noy Shimotsuki</Authors>
+    <Version>1.0.0</Version>
+    <Description>An implementation of DiffPlex (https://github.com/mmanela/diffplex) IChunker that splits string by Unicode grapheme.
+
+CharacterChunker, which is built into DiffPlex, splits by char unit, so surrogate pairs such as some kanji and emoji, and ligatures such as family emoji and country flags are broken apart.
+GraphemeChunker splits by Unicode grapheme unit, so those characters that you don't want to be splitted are properly processed as a single part.</Description>
+    <PackageProjectUrl>https://github.com/noy-shimotsuki/GraphemeChunker.DiffPlex</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/noy-shimotsuki/GraphemeChunker.DiffPlex.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>diff; DiffPlex; grapheme; IChunker</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © 2022 Noy Shimotsuki</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'!='net35'and'$(TargetFramework)'!='netstandard1.0'">
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)'=='net5.0'">
+    <NoWarn>$(NoWarn);NETSDK1138</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiffPlex" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net35'or'$(TargetFramework)'=='netstandard1.0'">
+    <PackageReference Include="GraphemeSplitter" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

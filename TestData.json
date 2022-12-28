@@ -1,0 +1,29 @@
+﻿{
+  "GraphemeChunkerTest": {
+    "Test1": {
+      "Title": "Diacritical Marks",
+      "Pattern": "a\u0300\u0301\u0320\u0321b\u0302\u0303\u0322\u0323c\u0303\u0304\u0323\u0324d\u0305\u0306\u0325\u0326",
+      "ExpectedLength": 4
+    },
+    "Test2": {
+      "Title": "Variation Selector",
+      "Pattern": "\u845B\u845B\uDB40\uDD00\u845B\uDB40\uDD01",
+      "ExpectedLength": 3
+    },
+    "Test3": {
+      "Title": "Asian Syllable",
+      "Pattern": "\u110B\u1161\u11AB\u1102\u1167\u11BC\u1112\u1161\u1109\u1166\u110B\u116D",
+      "ExpectedLength": 5
+    },
+    "Test4": {
+      "Title": "Family Emoji",
+      "Pattern": "\uD83D\uDC68\u200D\uD83D\uDC68\u200D\uD83D\uDC67\u200D\uD83D\uDC66\uD83D\uDC69\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66\uD83D\uDC68\u200D\uD83D\uDC68\u200D\uD83D\uDC67\u200D\uD83D\uDC66",
+      "ExpectedLength": 3
+    },
+    "Test5": {
+      "Title": "Emoji Skin Tone",
+      "Pattern": "\uD83D\uDC69\uD83C\uDFFB\uD83D\uDC71\uD83C\uDFFC\uD83D\uDC67\uD83C\uDFFD\uD83D\uDC66\uD83C\uDFFE",
+      "ExpectedLength": 4
+    }
+  }
+}
